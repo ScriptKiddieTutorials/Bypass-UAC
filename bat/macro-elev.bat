@@ -2,8 +2,8 @@
 
 :: SYNTAX
 ::::::::::::::::::::::::::::::::::::::::::
-::	CALL macro-elev.bat					::
-::	%$MACRO.elev% FILE1 FILE2 FILE3		::
+::  CALL macro-elev.bat                 ::
+::  %$MACRO.elev% FILE1 FILE2 FILE3     ::
 ::::::::::::::::::::::::::::::::::::::::::
 
 SETLOCAL DISABLEDELAYEDEXPANSION
