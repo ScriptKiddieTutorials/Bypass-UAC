@@ -1,6 +1,6 @@
 # Bypass-UAC
 
-My own version of [UACME](https://github.com/hfiref0x/UACME), except it's in many different languages:
+My own version of [UACME](https://github.com/hfiref0x/UACME) but in:
 - Batch
 - Powershell
 - Python
